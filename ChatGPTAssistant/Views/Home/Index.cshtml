@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "ChatGPT Assistant";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h1 class="display-4">ChatGPT Assistant</h1>
+        <p class="text-muted">
+            Projeto acadêmico utilizando ASP.NET Core MVC
+        </p>
+    </div>
+
+    <div class="card shadow p-4">
+
+        <form asp-controller="Chat" asp-action="Ask" method="post">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Digite sua pergunta
+                </label>
+
+                <textarea
+                    name="Prompt"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Escreva sua pergunta aqui..."></textarea>
+
+            </div>
+
+            <div class="text-center">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary px-5">
+
+                    Enviar
+
+                </button>
+
+            </div>
+
+        </form>
+
+        <hr class="my-4" />
+
+        <div>
+
+            <h4>Resposta:</h4>
+
+            <div class="alert alert-secondary mt-3">
+
+                @ViewBag.Response
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
